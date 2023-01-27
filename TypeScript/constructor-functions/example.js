@@ -1,28 +1,24 @@
-// give a simple js example of using constructor functions
-// to create objects
-//
-// create a new object using the Object constructor function
-// and assign it to a variable
-var obj = new Object();
-// add a property to the object
-obj.name = "John";
-// add a method to the object
-obj.greet = function() {
-    console.log("Hello, my name is " + this.name);
+console.log(this)
+// Output: {}
+
+let person = {
+    name: 'John',
+    age: 30,
+    greet: function(){
+        console.log(`this is ${this.name} and age is ${this.age}`)
+    }
 }
-// call the method
-obj.greet();
-// create a new object using the Object constructor function
-// and assign it to a variable
-var obj2 = new Object();
-// add a property to the object
-obj2.name = "Jane";
-// add a method to the object
-obj2.greet = function() {
-    console.log("Hello, my name is " + this.name);
+person.greet();
+
+// give me an example of constructor functions
+// Path: TypeScript\this-keyword\example.js
+function Person(name, age){
+    this.name = name;
+    this.age = age;
+    this.greet = function(){
+        console.log(`this is ${this.name} and age is ${this.age}`)
+    }
 }
-// call the method
-obj2.greet();
-// create a new object using the Object constructor function
-// and assign it to a variable
-var obj3 = new Object();
+
+let person1 = new Person('John', 30);
+person1.greet();
